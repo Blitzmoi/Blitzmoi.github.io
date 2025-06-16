@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ensures proper display across devices-->
+	<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-...your-integrity-hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>
+            Sub-scenic Amble
+        </title>
+    </head>
+    <body>
+        <div class="header">
+            <h1><img src="images/logo.png" alt="An image of the Sub-Scenic Amble logo" height=40px style="border-radius:50%;"> Sub-Scenic Amble</h1>
+            <h2> Discover lake hamilton one step at a time</h2>
+        </div>
+
+        <nav class="topnav">
+            <div class="nav">
+		    <a href="index.html" title="Jump to Home page">Home</a>
+            <a href="content.html" title="Jump to Content page">Content</a>
+            <a class="active" href="about.html" title="Jump to About us page">About us</a>
+            <a href="contact.html" title="Jump to Contact page">Contact</a>
+            </div>
+            <div class="theme-toggle">
+            <input type="radio" id="s1" name="color_style" onclick="toggleColorTheme(this)" value="s1" checked="checked">
+            <label for="s1">Dark mode</label>
+            <input type="radio" id="s2" name="color_style" onclick="toggleColorTheme(this)" value="s2">
+            <label for="s2">Light mode</label>
+        </div>
+        </nav>
+        <br>
+
+  <div class="center hero-title"><h1>Sub-scenic Amble never walk alone</h1>
+    <h2>Join a community that celebrates nature, fosters mindfulness, and walks together.</h2></div>
+  <br>
+  <div class="row">
+    <div class="column left">
+      <h2>Why us.</h2>
+      <p>At Sub-scenic Amble, we invite individuals to rediscover the tranquility of Hamilton lakeside
+        through mindful walks.Our mission is to foster a community that embraces nature's healing power,promotes mental well-being, and encourages sustainable
+        living.
+      </p>
+    </div>
+    <div class="column right">
+    <h2>Being us</h2>
+    <p>A community of people who appreciate the beauty of nature and have a passion for connecting
+      with the outdoors.
+    </p>
+    </div>
+ </div>
+<div style="padding-left: 30px">
+    <a href="contact.html" class="button">Contact us</a>
+</div>
+    <p style="font-size:20px; padding-left: 30px;">Follow us on: 
+    </a> 
+    <a href="https://www.youtube.com/@Sub-ScenicAmble" target="_blank" title="Visit our YouTube channel">
+        <i class="fa fa-youtube-play icon"></i>
+    </a>
+
+
+    
+
+<script>
+    function setTheme(themeValue) {
+        var theme = document.getElementsByTagName('link')[0];
+        if (themeValue === 's1') {
+            theme.setAttribute('href', 'css/styles.css');
+            document.getElementById('s1').checked = true;
+        } else {
+            theme.setAttribute('href', 'css/styles2.css');
+            document.getElementById('s2').checked = true;
+        }
+    }
+
+    function toggleColorTheme(myRadio) {
+        setTheme(myRadio.value);
+        localStorage.setItem('color_style', myRadio.value);
+    }
+
+    window.onload = function() {
+        var savedTheme = localStorage.getItem('color_style') || 's1';
+        setTheme(savedTheme);
+    }
+</script>
+
+    </body>
+
+    <footer class="fixed_footer">
+	    <p class="text_footer">
+            <i class="fas fa-envelope"></i> Email: <a href="mailto:amblesubscenic@gmail.com">amblesubscenic@gmail.com</a>
+        </p>
+	    <p class="text_footer">
+            Copyright &copy; 2025 Sub-scenic Amble. All Rights Reserved.
+        </p>
+    </footer> 
+</html>
